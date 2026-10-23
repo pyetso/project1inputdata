@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="680" viewBox="0 0 900 680" role="img" aria-label="Two figures connected by projected lines">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0f192b"/><stop offset="1" stop-color="#152f48"/></linearGradient><filter id="blur"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<rect width="900" height="680" fill="url(#bg)"/>
+<rect x="48" y="50" width="804" height="552" rx="9" fill="none" stroke="#47607a" stroke-width="2"/>
+<circle cx="188" cy="250" r="31" fill="#aac4d3"/><path d="M188 283 V408 M188 329 L127 377 M188 329 L245 380 M188 400 L145 510 M188 400 L237 510" fill="none" stroke="#aac4d3" stroke-width="17" stroke-linecap="round"/><circle cx="718" cy="249" r="31" fill="#aac4d3"/><path d="M718 283 V408 M718 329 L664 382 M718 329 L774 377 M718 400 L677 510 M718 400 L766 510" fill="none" stroke="#aac4d3" stroke-width="17" stroke-linecap="round"/><path d="M276 195 C410 161 470 247 626 195" stroke="#7be0d3" stroke-width="1" opacity="0.14" fill="none"/>
+<path d="M276 209 C410 175 470 278 626 226" stroke="#7be0d3" stroke-width="2" opacity="0.22" fill="none"/>
+<path d="M276 223 C410 189 470 309 626 257" stroke="#7be0d3" stroke-width="3" opacity="0.30" fill="none"/>
+<path d="M276 237 C410 203 470 340 626 288" stroke="#7be0d3" stroke-width="1" opacity="0.38" fill="none"/>
+<path d="M276 251 C410 217 470 371 626 319" stroke="#7be0d3" stroke-width="2" opacity="0.46" fill="none"/>
+<path d="M276 265 C410 231 470 402 626 350" stroke="#7be0d3" stroke-width="3" opacity="0.54" fill="none"/>
+<path d="M276 279 C410 245 470 433 626 381" stroke="#7be0d3" stroke-width="1" opacity="0.14" fill="none"/>
+<path d="M276 293 C410 259 470 464 626 412" stroke="#7be0d3" stroke-width="2" opacity="0.22" fill="none"/>
+<path d="M276 307 C410 273 470 495 626 443" stroke="#7be0d3" stroke-width="3" opacity="0.30" fill="none"/>
+<path d="M276 321 C410 287 470 526 626 474" stroke="#7be0d3" stroke-width="1" opacity="0.38" fill="none"/>
+<path d="M276 335 C410 301 470 267 626 215" stroke="#7be0d3" stroke-width="2" opacity="0.46" fill="none"/>
+<path d="M276 349 C410 315 470 298 626 246" stroke="#7be0d3" stroke-width="3" opacity="0.54" fill="none"/>
+<path d="M276 363 C410 329 470 329 626 277" stroke="#7be0d3" stroke-width="1" opacity="0.14" fill="none"/>
+<path d="M276 377 C410 343 470 360 626 308" stroke="#7be0d3" stroke-width="2" opacity="0.22" fill="none"/>
+<path d="M276 391 C410 357 470 391 626 339" stroke="#7be0d3" stroke-width="3" opacity="0.30" fill="none"/>
+<path d="M276 405 C410 371 470 422 626 370" stroke="#7be0d3" stroke-width="1" opacity="0.38" fill="none"/>
+<path d="M276 419 C410 385 470 453 626 401" stroke="#7be0d3" stroke-width="2" opacity="0.46" fill="none"/>
+<path d="M276 433 C410 399 470 484 626 432" stroke="#7be0d3" stroke-width="3" opacity="0.54" fill="none"/>
+<path d="M276 447 C410 413 470 515 626 463" stroke="#7be0d3" stroke-width="1" opacity="0.14" fill="none"/>
+<path d="M276 461 C410 427 470 256 626 204" stroke="#7be0d3" stroke-width="2" opacity="0.22" fill="none"/>
+<path d="M276 475 C410 441 470 287 626 235" stroke="#7be0d3" stroke-width="3" opacity="0.30" fill="none"/>
+<text x="72" y="107" font-family="Arial,sans-serif" font-weight="bold" font-size="34" fill="#fff">The Space Between</text>
+<text x="72" y="640" font-family="Arial,sans-serif" font-size="20" fill="#c6d8e3">Concept sketch  ·  not a completed installation</text></svg>

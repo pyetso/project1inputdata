@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="t d">
+<title id="t">Still Here - a proposed time to colour projection</title>
+<desc id="d">Three stages of one person standing still: warm yellow after arrival, orange after ten seconds, and red after twenty seconds.</desc>
+<rect width="1200" height="780" rx="22" fill="#101b28"/>
+<text x="64" y="70" fill="#ffffff" font-family="Arial, sans-serif" font-weight="700" font-size="44">STILL HERE</text>
+<text x="64" y="110" fill="#b6c6d0" font-family="Arial, sans-serif" font-size="21">One place, three moments. The longer you stay, the more the light changes.</text>
+<g font-family="Arial, sans-serif">
+<rect x="60" y="150" width="338" height="495" rx="16" fill="#192c3b" stroke="#4f6470"/>
+<rect x="430" y="150" width="338" height="495" rx="16" fill="#192c3b" stroke="#4f6470"/>
+<rect x="800" y="150" width="338" height="495" rx="16" fill="#192c3b" stroke="#4f6470"/>
+<rect x="91" y="200" width="276" height="305" rx="12" fill="#fff05c"/>
+<rect x="461" y="200" width="276" height="305" rx="12" fill="#ffa23a"/>
+<rect x="831" y="200" width="276" height="305" rx="12" fill="#e9444c"/>
+<g stroke="#173041" stroke-width="7" fill="none" stroke-linecap="round"><circle cx="227" cy="313" r="21" fill="#173041"/><path d="M227 335 L227 415 M227 362 L199 390 M227 362 L255 390 M227 414 L208 457 M227 414 L246 457"/>
+<circle cx="597" cy="313" r="21" fill="#173041"/><path d="M597 335 L597 415 M597 362 L569 390 M597 362 L625 390 M597 414 L578 457 M597 414 L616 457"/>
+<circle cx="967" cy="313" r="21" fill="#173041"/><path d="M967 335 L967 415 M967 362 L939 390 M967 362 L995 390 M967 414 L948 457 M967 414 L986 457"/></g>
+<text x="229" y="563" font-size="27" text-anchor="middle" fill="#ffffff">JUST ARRIVED</text>
+<text x="229" y="600" font-size="20" text-anchor="middle" fill="#b6c6d0">Yellow / 0 sec</text>
+<text x="599" y="563" font-size="27" text-anchor="middle" fill="#ffffff">STILL STANDING</text>
+<text x="599" y="600" font-size="20" text-anchor="middle" fill="#b6c6d0">Orange / 10 sec</text>
+<text x="969" y="563" font-size="27" text-anchor="middle" fill="#ffffff">STILL HERE</text>
+<text x="969" y="600" font-size="20" text-anchor="middle" fill="#b6c6d0">Red / 20 sec</text>
+<text x="60" y="705" font-size="19" fill="#c4d0d8">Concept storyboard only. Times and colours may change after testing.</text>
+</g>
+</svg>

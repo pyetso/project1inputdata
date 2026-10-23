@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<title>Physical Computing Fall 2026</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
+<style>
+body,h1,h2,h3,h4,h5 {
+  font-family: "Poppins", sans-serif
+  }
+body {
+  font-size:16px;
+  }
+h1 { 
+  font-size:30px;
+  }
+h2 {
+  font-size:25px;
+  }
+  h3 {
+  font-size:18px;
+  }
+img {
+  width: 100%;
+  height: 100%;
+}
+.grid {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+.w3-half img{
+  margin-bottom:-6px;
+  margin-top:16px;
+  opacity:0.8;
+  cursor:pointer
+  } */
+.w3-half img:hover{
+  opacity:1
+  }
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Preview crop only; main website styling is unchanged. */
+.grid img {width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center;display:block;}
+.grid {grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;width:100%;}
+.gallery-note {font-size:14px;line-height:1.6;margin:12px 0 16px;}
+.gallery-video {position:relative;display:inline-block;cursor:pointer;}
+.gallery-video:after {content:'▶';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:25px;color:white;background:#0009;border-radius:50%;width:45px;height:45px;line-height:45px;text-align:center;pointer-events:none;}
+#modal01 video {max-width:100%;max-height:75vh;}
+@media(max-width:780px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));}.grid img{height:auto;}}
+@media(max-width:450px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+.grid .gallery-video {width:100%;aspect-ratio:1/1;display:block;}
+.grid .gallery-video img {width:100%;height:100%;aspect-ratio:1/1;}
+/* Keep the original gallery layout; use three columns only for concept sketches. */
+.concept-grid {grid-template-columns:repeat(3,minmax(0,1fr));}
+.concept-grid img {aspect-ratio:1200/780;object-fit:contain;background:#152331;}
+@media(max-width:780px){.concept-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:450px){.concept-grid{grid-template-columns:1fr;}}
+.pending-grid {grid-template-columns:repeat(2,minmax(0,1fr));max-width:850px;}
+.pending-grid img {aspect-ratio:1200/780;object-fit:contain;background:#eef0f2;}
+@media(max-width:500px){.pending-grid{grid-template-columns:1fr;}}
+.grid img[src$=".svg"] {object-fit:contain;background:#0f192b;}
+</style>
+<body>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top w3-large w3-padding" id="mySidebar" style="z-index:3;width:200px;font-weight:bold;"><br/>
+<a class="w3-button w3-display-topleft" href="javascript:void(0)" onclick="w3_close()" style="display:none;font-size:22px"></a>
+<div class="w3-container">
+<h3 class="w3-padding-64"><b>IXD<br/>DESN 30146<br/>Fall 2026</b></h3>
+</div>
+<div class="w3-bar-block">
+<a class="w3-bar-item w3-button w3-hover-white" href="#Home" onclick="w3_close()">Home</a>
+<a class="w3-bar-item w3-button w3-hover-white" href="#Module1" onclick="w3_close()">Module 1</a>
+<a class="w3-bar-item w3-button w3-hover-white" href="#Activity1" onclick="w3_close()">Activity 1</a>
+<a class="w3-bar-item w3-button w3-hover-white" href="#Activity2" onclick="w3_close()">Activity 2</a>
+<a class="w3-bar-item w3-button w3-hover-white" href="#Activity3" onclick="w3_close()">Activity 3</a>
+<a class="w3-bar-item w3-button w3-hover-white" href="#ResearchActivity" onclick="w3_close()">Research Activity</a>
+<a class="w3-bar-item w3-button w3-hover-white" href="#ProjectConcept" onclick="w3_close()">Project Concept</a>
+</div>
+</nav>
+<!-- Top menu on small screens
+<header class="w3-container w3-top w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Menu</span>
+</header> -->
+<!-- 
+  if you want to link your image to a video use one of the following alt links as an example:
+
+  alt="test1Lorem ipsum dolor sit amet, consectetur adipiscing elit test1Lorem ipsum dolor sit amet, consectetur adipiscing elit <a href='https://www.youtube.com/embed/tgbNymZ7vqY' target='_blank'><p>Project Video Link</p></a>"> 
+  alt="test2Lorem ipsum dolor sit amet, consectetur adipiscing elit <div class='container'><iframe class='responsive-iframe' src='https://www.youtube.com/embed/tgbNymZ7vqY'></iframe></div>">
+
+-->
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay" id="myOverlay" onclick="w3_close()" style="cursor:pointer" title="close side menu"></div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:220px;margin-right:20px">
+<!-- Header -->
+<div class="w3-container" id="default" style="margin-top:80px">
+<h1 class="w3-jumbo" id="Home"><b>Physical Computing</b></h1>
+<h1 class="w3-xxxlarge w3-text-blue"><b>Module 1 Activity Documentation</b></h1>
+<h1 class="w3-xxxlarge w3-text-blue"><b>Exploring the Art Path | Still Here</b></h1>
+<hr class="w3-round" style="width:50px;border:5px solid grey"/>
+</div>
+<!-- Boilerplate -->
+<div class="w3-container" id="Module1" style="margin-top:75px">
+<h1 class="w3-xxxlarge w3-text-red"><b>Module 1</b></h1>
+<hr class="w3-round" style="width:50px;border:5px solid red"/>
+<h2>Activity Research</h2>
+<h3>Module 1 explores physical interaction through Arduino sensor inputs, ProtoPie Connect, and TouchDesigner. These exercises helped me think about how everyday actions can change a projected artwork. Still Here is my current leading idea: the colour shifts slowly while someone stays in one spot. I am also considering The Sound of Home, where live microphone input would change abstract graphics in TouchDesigner. Both projects are proposals rather than completed installations. My next step is to test one dependable physical input and observe how someone understands its response.</h3>
+</div>
+<!-- Project 1 Photo grid (modal) -->
+<div id="Activity1">
+<h2>Activity 1</h2>
+<p class="gallery-note">I tested the Arduino Uno, Blink sketch, and sensor readings in the Serial Monitor. Turning the potentiometer showed how physical input becomes data.</p><div class="grid"><img alt="Arduino Uno and USB cable before testing." data-full="images/Activity1/activity1_1_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity1/activity1_1_preview.jpg" style="width:100%"/><span class="gallery-video" data-caption="Video: first Arduino activity and hardware test." data-video="images/Activity1/activity1_2.mp4" onclick="openVideo(this)" title="Play video"><img alt="Video: first Arduino activity and hardware test." data-full="images/Activity1/activity1_2_full.jpg" decoding="async" loading="lazy" src="images/Activity1/activity1_2_preview.jpg" style="width:100%"/></span><img alt="Arduino IDE running the Blink example." data-full="images/Activity1/activity1_3_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity1/activity1_3_preview.jpg" style="width:100%"/><span class="gallery-video" data-caption="Video: another stage of the Arduino exercise." data-video="images/Activity1/activity1_4.mp4" onclick="openVideo(this)" title="Play video"><img alt="Video: another stage of the Arduino exercise." data-full="images/Activity1/activity1_4_full.jpg" decoding="async" loading="lazy" src="images/Activity1/activity1_4_preview.jpg" style="width:100%"/></span><span class="gallery-video" data-caption="Video: further Arduino testing." data-video="images/Activity1/activity1_5.mp4" onclick="openVideo(this)" title="Play video"><img alt="Video: further Arduino testing." data-full="images/Activity1/activity1_5_full.jpg" decoding="async" loading="lazy" src="images/Activity1/activity1_5_preview.jpg" style="width:100%"/></span></div>
+</div>
+<hr class="w3-round" style="width:90%;border:5px solid grey;margin-top:80px"/>
+<div class="w3-row-padding" id="Activity2">
+<h2>Activity 2</h2>
+<p class="gallery-note">I used ProtoPie Connect to view incoming degree, humidity, and temperature values and see how sensor data could drive an interaction. The fifth image below is a labelled placeholder for one more genuine screenshot or test photo.</p><div class="grid"><img alt="Arduino kit and setup for physical input." data-full="images/Activity2/activity2_1_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity2/activity2_1_preview.jpg" style="width:100%"/><img alt="Arduino code and serial monitor showing temperature, humidity and degree readings." data-full="images/Activity2/activity2_2_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity2/activity2_2_preview.jpg" style="width:100%"/><img alt="Arduino hardware and cable used for input." data-full="images/Activity2/activity2_3_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity2/activity2_3_preview.jpg" style="width:100%"/><img alt="ProtoPie Connect receiving degree, humidity, and temperature messages." data-full="images/Activity2/activity_4_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity2/activity_4_preview.jpg" style="width:100%"/><img alt="Image placeholder, not an activity photo. Add a fifth real ProtoPie Connect screenshot or sensor test here." decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity2/activity2_5_PLACEHOLDER.svg" style="width:100%"/></div>
+</div>
+<hr class="w3-round" style="width:90%;border:5px solid grey;margin-top:80px"/>
+<div class="w3-row-padding" id="Activity3">
+<h2>Activity 3</h2>
+<p class="gallery-note">I tested Arduino input with TouchDesigner and explored how sensor readings could affect on-screen visuals. This made me consider interactive projections where presence, stillness, or small gestures change the image.</p><div class="grid"><img alt="Arduino hardware connected to the computer." data-full="images/Activity3/activity3_1_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity3/activity3_1_preview.jpg" style="width:100%"/><img alt="Arduino sketch and TouchDesigner setup on screen." data-full="images/Activity3/activity3_2_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity3/activity3_2_preview.jpg" style="width:100%"/><img alt="Serial Monitor printing sensor readings." data-full="images/Activity3/activity3_3_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity3/activity3_3_preview.jpg" style="width:100%"/><img alt="TouchDesigner running at home with Arduino code and circular visual output." data-full="images/Activity3/activity3_4_full.jpg" decoding="async" loading="lazy" onclick="onClick(this)" src="images/Activity3/activity3_4_preview.jpg" style="width:100%"/><span class="gallery-video" data-caption="Video: TouchDesigner and sensor-driven visual exploration." data-video="images/Activity3/activity3_5.mp4" onclick="openVideo(this)" title="Play video"><img alt="Video: TouchDesigner and sensor-driven visual exploration." data-full="images/Activity3/activity3_5_full.jpg" decoding="async" loading="lazy" src="images/Activity3/activity3_5_preview.jpg" style="width:100%"/></span></div>
+<p class="gallery-note">TouchDesigner wouldn’t work on the lab computer, so I took the Arduino home and continued the test on my own computer. The fourth photo shows that setup.</p>
+</div>
+<hr class="w3-round" style="width:90%;border:5px solid grey;margin-top:80px"/>
+<div class="w3-row-padding" id="ResearchActivity">
+<h2>Research Activity</h2>
+<hr class="w3-round" style="width:50px;border:5px solid red"/>
+<h2>Consumer Trend Research</h2>
+<h3>I looked at two home-tech directions relevant to 2027: responsive environments and touchless controls. Both give me ideas for physical inputs, although research about smart-home products does not predict how someone will behave in an art installation.</h3>
+<p><b>Responsive spaces.</b> The Philips Hue motion sensor can activate lighting when it detects movement. NielsenIQ's 2026 <a href="https://nielseniq.com/global/en/insights/report/2026/the-smart-home-evolution/" target="_blank" rel="noopener">Smart Home Evolution report</a> says 27% of Americans used a smart-home product in the previous 30 days. This is context for responsive technology, not a statistic about interactive art. For my project, I want presence or time spent in one place to become the input.</p>
+<p><b>Touchless input.</b> Google's Nest Hub (2nd gen) uses Motion Sense for certain gestures without needing a camera for that feature. In <a href="https://worldpanelbynumerator.com/insights/us-smart-home-consumer-insight" target="_blank" rel="noopener">Worldpanel by Numerator's October 2026 smart-home study</a>, 60% of U.S. smart-speaker buyers named ease of use as a main buying consideration. That does not measure demand for gesture-controlled art. It does make me question whether visitors would know what to do without instructions.</p>
+<p><b>Where The Sound of Home fits.</b> Sound-reactive visuals are another kind of responsive environment: a microphone would supply changes in loudness or frequency, and TouchDesigner would translate those numbers into animation. This is a concept I developed from the wider theme of responsive spaces, not a separate consumer trend proven by the smart-home statistics. My first test would use one microphone, rather than installing sensors throughout a house.</p>
+<h2>Personas Research</h2>
+<h3>I worked with two research-informed personas: Nia, 26, and Alex, 40. I made these provisional personas to think through the interaction; I have not interviewed people matching them, so their preferences are questions to test rather than facts about an age group.</h3>
+<p><b>Nia, 26 (Gen Z).</b> I imagine Nia wanting to try the artwork without reading a long introduction. A Pew Research Center study published in June 2026 found that 33% of U.S. adults aged 18–29 reported having a smart speaker with AI features. I would watch whether Nia notices the slow shift from yellow toward red when she stays in one spot, or leaves before the change becomes clear.</p>
+<p><b>Alex, 40 (Millennial).</b> Alex represents someone who wants the connection between action and response to make sense quickly. Pew reported 41% ownership of a smart speaker with AI features among people aged 30–49. I'd test whether Alex can trigger a touchless response with one gesture, and whether the feedback makes it clear when the system has reacted.</p>
+<p>I also looked at purchase priorities, including consumer reviews and ease of use. Those figures relate to buying products, not visiting art installations, so I wouldn't use them to assume how either person behaves in a gallery.</p>
+<h2>HMI Research</h2>
+<h3>A slowly changing projection could look like a normal video if visitors don't realize that standing still affects it. Gesture-controlled work has a different problem: people may not discover where to move their hands. In both cases, I need to test whether the connection between action and response is noticeable.</h3>
+<p><b>For responsive spaces:</b> How might I make standing still produce a visible change that feels worth noticing? How might I show visitors that their time in a particular spot, rather than a prerecorded video, is affecting the projection?</p>
+<p><b>For touchless controls:</b> How might I encourage visitors to discover a gesture through the artwork itself? How might I make a small hand movement produce feedback that's easy to notice but still playful?</p>
+<p>For an early test, I'd let someone approach without instructions. I'd watch whether they notice an immediate sign of response, whether they stay long enough to see a colour change, and whether the gesture-based alternative is easier to understand. Those observations would matter more than assuming a home-tech statistic predicts their behaviour.</p>
+<h2>Project Path</h2>
+<h3>Right now I'm leaning toward the Art Path and working individually, although I seriously considered Design. I like UX/UI design and enjoy thinking about how people understand an interface. I just couldn't come up with a Design Path concept in that moment that felt original enough to get excited about. Making an entire space react to someone seemed more interesting to explore first.</h3>
+<p>I haven't ruled out UX/UI at all. A touchless museum experience or an interface you navigate by moving around it could be a Design Path project, and those would let me work on discoverability and feedback. But I don't want to force an interface idea just to have one. Even if I choose Art, I can still use UX thinking to make the interaction understandable.</p>
+<p>I'd prefer to work <b>individually</b> at first so I can get a sensor connected to TouchDesigner and test a response without taking on too much. A two-person installation might be better with someone else working on it; I'm open to that if the project develops in that direction.</p>
+<h3>Four art concepts I'm considering</h3>
+<p><b>1. Still Here (my current leading idea).</b> One visitor stands in a marked spot. A projection starts yellow and gradually becomes orange, then red as they remain there; when they leave, it returns toward yellow. It would explore how standing still can change an environment. I'd need to test occupancy sensing, timing, and how people interpret the colour. This is a proposal, not a completed prototype.</p>
+<p><b>2. The Sound of Home (new idea).</b> A microphone captures live sound amplitude and, if useful, frequency data; TouchDesigner turns those changing measurements into graphics. In a quiet room, the shapes could move slowly. Noise might make the visuals ripple, stretch, or brighten. My first test would use one microphone and a laptop. I originally pictured microphones in several rooms, but I would start small to check whether the visuals react reliably. A larger installation would need clear consent and visible notice about microphones. The aim would be live analysis of audio levels, not recording speech.</p>
+<p><b>3. Afterimage.</b> Someone approaches a projected surface and small traces gather around them. When they walk away, the traces linger before fading. This focuses on the memory of a person's presence rather than time spent waiting.</p>
+<p><b>4. Weather You Can't Hold.</b> Hand movements shift projected particles like wind. It is the clearest gesture-based idea, though accurately detecting a gesture is something I'd need to test.</p>
+<p><b>Do these have to solve a problem?</b> The Project 1 brief describes Art as creative exploration guided by curiosity and experimentation; the Design Path focuses on the needs of a specified end user. I do not need to invent a practical problem for an Art Path installation. I do need a clear question and a way to test my idea. With Still Here, I want to find out whether a slow response to stillness can hold someone's attention. With The Sound of Home, I want to see whether ordinary sounds change how people notice a space.</p>
+<p><b>How my shortlist changed.</b> I started with ideas such as The Space Between, where two visitors connect lines of light. That could demand a more complicated multi-person setup, so I narrowed the list to four. The Sound of Home is now a stronger alternative because I could try its basic audio-to-graphics interaction using a single microphone.</p>
+<p><b>Research to project connections.</b> Responsive environments connect most directly to Still Here (presence and time), Afterimage (presence and fading traces), and The Sound of Home (sound levels becoming visuals). Touchless control is the stronger connection for Weather You Can't Hold (hand movements). The smart-home figures are background research, not evidence that these artworks will succeed. I would learn that through experiments with visitors.</p>
+<p><b>Why I'm leaning toward Still Here.</b> I like the contrast between how little the visitor does and how much the scene changes. In a campus corridor or quiet gallery corner, it could ask people to stop and notice the passage of time. The hardest part may be getting someone to notice a gradual change before walking away. I'd test a small immediate response, then a slower colour transition. I also need to check whether the yellow-to-red shift feels inviting or more like a warning, and whether another change in brightness or shape would make the work easier to understand without relying on colour alone.</p>
+<p><b>A related artwork I found:</b> Isabelle Pleno's <a href="https://www.isabellepleno.com/art/taking-up-space" target="_blank" rel="noopener"><i>Taking Up Space</i> (2024)</a> also responds to people lingering. That gives me a useful precedent, while my proposed version would explore a simple time-to-colour transition instead of growing forms.</p>
+<p class="gallery-note">Three concept illustrations: Still Here, Weather You Can't Hold, and The Sound of Home. They explain proposals, not finished installations. Click to enlarge.</p>
+<div class="grid concept-grid">
+<img src="images/Research/still_here_concept.svg" style="width:100%" onclick="onClick(this)" alt="Concept sketch: Still Here. Three frames show a visitor staying still as the projection changes gradually from yellow to orange to red."/>
+<img src="images/Research/weather_concept.svg" style="width:100%" onclick="onClick(this)" alt="Concept sketch: Weather You Can't Hold. A hand gesture pushes projected particles through a field of colour."/>
+<img src="images/Research/sound_home_concept.svg" style="width:100%" onclick="onClick(this)" alt="Concept sketch: The Sound of Home. A microphone input creates visual waves from quiet to loud sound."/>
+</div>
+<p><b>Sources:</b> <a href="https://nielseniq.com/global/en/insights/report/2026/the-smart-home-evolution/" target="_blank" rel="noopener">NielsenIQ (2026)</a>, <a href="https://worldpanelbynumerator.com/insights/us-smart-home-consumer-insight" target="_blank" rel="noopener">Worldpanel by Numerator (Oct. 2026)</a>, <a href="https://www.pewresearch.org/chart/people-in-their-30s-and-40s-are-most-likely-to-have-smart-speakers-doorbells-and-thermostats-at-home/" target="_blank" rel="noopener">Pew Research Center (June 2026)</a>, <a href="https://www.isabellepleno.com/art/taking-up-space" target="_blank" rel="noopener">Isabelle Pleno (2024)</a>, and the Project 1 brief. The research worksheet holds further details.</p><a download="" href="images/Research/Physical_Computing_Research_Activity.docx">Download full Research Activity document</a></div>
+<hr class="w3-round" style="width:90%;border:5px solid grey;margin-top:80px"/>
+<!-- Boilerplate -->
+<div class="w3-container" id="ProjectConcept" style="margin-top:75px">
+<h1 class="w3-xxxlarge w3-text-red"><b>Project 1 Concept</b></h1>
+<hr class="w3-round" style="width:50px;border:5px solid red"/>
+<h2>Project 1 Concept</h2>
+<p>Still Here is my current proposal for an interactive projection about time and stillness. When a visitor steps into a particular place, the projection starts yellow. If they stay, it slowly moves through orange toward red; when they leave, the colour gradually resets. I like that they can change the room without needing to wave or tap anything. The idea would suit a campus corridor or small gallery area, where choosing to pause becomes the action. This is a proposed concept, not something I have built yet. I am also considering The Sound of Home, where a microphone drives graphics based on the sound in a room.</p>
+<h3>Proposed interaction</h3><p>Input: a floor pressure-switch mat or a carefully positioned continuous distance sensor determines whether someone is still in the marked zone. Data: Arduino sends the occupied / unoccupied state to TouchDesigner. Visual response: a timer progresses while the zone stays occupied and controls the yellow-to-orange-to-red colour transition. Output: a projector displays the changing image; when the spot is empty, the projection fades or resets. I would not rely on a basic PIR motion sensor alone, because it may stop responding when a person is standing still.</p><h3>Testing plan</h3><p>First I would test whether the sensor keeps detecting someone who stands still for 20 to 30 seconds, without resetting the timer unexpectedly. Then I would connect the elapsed time to a TouchDesigner colour gradient and try the projected image with another person. If the transition is so slow that they miss it, I would make the first response more noticeable while keeping the later change gradual. I would also ask how the colours feel and try adding a shape or brightness change so meaning does not depend on colour alone.</p>
+<h3>Alternative concept: The Sound of Home</h3>
+<p>I also want to test a microphone as an input. My starting experiment would be one microphone connected to a laptop, with TouchDesigner analysing changing audio levels to move a shape or ripple pattern. A quiet room might create slower motion, while speaking or clapping would generate a stronger visual response. This would be live sound analysis rather than storing recordings. I would only consider a multi-room version with permission from everyone using the space.</p>
+<h3>Photos and prototype tests to add</h3>
+<p class="gallery-note">The following are intentionally blank image placeholders. I have not built either concept yet. I can replace these with genuine setup photos or TouchDesigner screenshots after testing.</p>
+<div class="grid pending-grid"><img src="images/Concept/still_here_test_PLACEHOLDER.svg" style="width:100%" onclick="onClick(this)" alt="Placeholder only: add a real photo of the Still Here presence sensor and projection test."/><img src="images/Concept/sound_home_test_PLACEHOLDER.svg" style="width:100%" onclick="onClick(this)" alt="Placeholder only: add a real screenshot of the Sound of Home microphone input and TouchDesigner output."/></div>
+<h3>Peer feedback and reflection</h3>
+<p><b>To complete after the peer discussion.</b> Add what classmates actually said about the concept, which comments helped, and what I decided to change. I have not received or recorded peer feedback here yet, so I am leaving this section open rather than making up quotes.</p>
+<h3>Reflection</h3><p>The Module 1 exercises helped me understand how physical actions become sensor data and how that data can change something on screen. I am leaning toward Art because I want to test visual ideas like Still Here rather than build a conventional interface. I did consider the Design Path because I really enjoy UX/UI design, but at the time I could not think of a design project that felt original enough to pursue. I still want to use UX skills here: visitors should notice what the artwork is responding to, and I need to learn from people testing it. I am keeping peer feedback as a separate section above until I can include actual comments and my own response.</p><a download="" href="images/Concept/Physical_Computing_Project_1.docx">Download full Project 1 proposal</a><p class="gallery-note"><a download href="Process_Document_Physical_Computing.pdf">Download Module 1 process document (PDF slide deck)</a> - photos from weekly activities, research, concept development, and next steps.</p></div>
+<!-- Modal for full size images on click-->
+<div class="w3-modal w3-grey" id="modal01" onclick="if(event.target===this)closeMediaModal()" style="padding-top:0">
+<span class="w3-button w3-black w3-xxlarge w3-display-topright" onclick="closeMediaModal()">×</span>
+<div class="w3-modal-content w3-center w3-transparent" style="padding:20px">
+<video controls="" id="video01" playsinline="" style="display:none;width:100%"></video><img class="w3-image" id="img01"/>
+<h2 id="caption"></h2>
+<!-- <div id="urLink"></div> -->
+<!-- <a id="urLink" class="container"><iframe class="responsive-iframe"></iframe></a> -->
+<!-- </div> -->
+</div>
+<!-- End page content -->
+</div>
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a class="w3-hover-opacity" href="https://www.w3schools.com/w3css/default.asp" target="_blank" title="W3.CSS">w3.css</a></p></div>
+<script>
+function onClick(element) {
+  var video = document.getElementById('video01'); video.pause();video.style.display='none';video.removeAttribute('src');
+  var img = document.getElementById('img01');img.style.display='block';img.src=element.getAttribute('data-full') || element.src;
+  document.getElementById('caption').textContent=element.alt;
+  document.getElementById('modal01').style.display='block';
+}
+function openVideo(element){
+  var img=document.getElementById('img01');img.style.display='none';
+  var video=document.getElementById('video01');video.src=element.getAttribute('data-video');video.style.display='block';video.load();
+  document.getElementById('caption').textContent=element.getAttribute('data-caption');
+  document.getElementById('modal01').style.display='block';video.play().catch(function(){});
+}
+function closeMediaModal(){var video=document.getElementById('video01');video.pause();video.removeAttribute('src');video.load();document.getElementById('modal01').style.display='none';}
+</script>
+</div></body>
+</html>
