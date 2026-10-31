@@ -4,7 +4,7 @@
 <title>Physical Computing Fall 2026</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
+<link href="w3-offline-fallback.css" rel="stylesheet"/><link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
 <style>
 body,h1,h2,h3,h4,h5 {
@@ -69,6 +69,34 @@ img {
 
 .grid .gallery-video {width:100%;aspect-ratio:1/1;display:block;}
 .grid .gallery-video img {width:100%;height:100%;aspect-ratio:1/1;}
+
+
+/* Research and concept illustration additions */
+.visual-figure {margin:18px 0 22px;max-width:100%;}
+.visual-figure img {display:block;width:100%;height:auto!important;max-height:420px;object-fit:contain;border-radius:2px;background:#fbfaf6;cursor:zoom-in;opacity:1!important;margin:0!important;}
+.visual-figure--portrait img {aspect-ratio:16/9;object-fit:cover;}
+.visual-figure--wide img {max-height:unset;object-fit:contain;}
+.visual-figure figcaption {font-size:13px;line-height:1.55;color:#52606d;margin-top:9px;}
+.visual-figure img:focus-visible {outline:3px solid #227ac3;outline-offset:3px;}
+.concept-gallery {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:20px 0 32px;align-items:start;}
+.concept-gallery .visual-figure {margin:0;}
+.concept-gallery img {aspect-ratio:900/680;object-fit:contain;}
+.visual-note {font-size:13px;line-height:1.6;border-left:4px solid #cfdeec;padding:9px 14px;background:#f4f7fb;color:#43566a;margin:24px 0 27px;}
+.visual-lead {font-size:14px;color:#596978;line-height:1.6;margin:10px 0 18px;}
+#ResearchActivity .w3-half,#ProjectConcept .w3-half {min-width:0;}
+#ResearchActivity >h2 {margin-top:42px;}
+@media(max-width:840px){.concept-gallery{gap:14px;}.visual-figure img{max-height:none;}}
+@media(max-width:650px){.concept-gallery{grid-template-columns:1fr;}.visual-figure--portrait img{aspect-ratio:auto;}.visual-figure {margin:12px 0 20px;}}
+
+#modal01 .w3-modal-content{max-width:1100px;} #modal01 #img01{max-height:80vh;width:auto;height:auto;max-width:100%;object-fit:contain;display:block;margin:auto;} #modal01 #caption{font-size:16px;line-height:1.5;}
+
+/* Keep the long research pages within narrow screens. */
+@media(max-width:650px){
+ #Activity2,#Activity3,#ResearchActivity{margin-left:0!important;margin-right:0!important;padding-left:16px;padding-right:16px;}
+ #ResearchActivity .w3-row-padding{margin-left:0;margin-right:0;}
+ #ResearchActivity .w3-half{padding-left:0;padding-right:0;}
+ .concept-gallery{max-width:100%;}
+}
 </style>
 <body>
 <!-- Sidebar/menu -->
@@ -138,102 +166,96 @@ img {
 <h2>Research Activity</h2>
 <hr class="w3-round" style="width:50px;border:5px solid red"/>
 <p>I started with two home-tech directions that interested me: responsive environments and touchless interaction. The reports describe what people are using and buying in 2026, while the 2027–2028 part is where I started thinking about how those ideas might develop. I was more interested in what they could mean for an artwork than in designing another smart-home product.</p>
-
 <h2>01 / Consumer trends for 2027–2028</h2>
 <div class="w3-row-padding">
-  <div class="w3-half">
-    <h3>Category 1: Responsive environments</h3>
-    <p><b>Source and direction.</b> NielsenIQ's 2026 <i>The Smart Home Evolution</i> report looks at how connected technology is becoming part of ordinary homes. I'm interested in spaces that notice someone's presence and respond without needing a separate screen or app (NielsenIQ, 2026).</p>
-    <p><b>What makes it different?</b> The space becomes part of the interface. For example, the Philips Hue motion sensor can turn connected lights on when it detects movement, with behaviour that can vary by time of day (Philips Hue, n.d.). An artwork could use the same idea of a physical input, but respond with colour, shapes or projection instead.</p>
-    <p><b>Research statistic.</b> NielsenIQ reports that <b>27% of Americans</b> used a smart-home product in the previous 30 days. I don't see this as evidence that people want interactive art; it tells me that responding environments are already part of daily life for some people. It made me curious about using that familiar relationship in a less practical, more expressive way.</p>
-  </div>
-  <div class="w3-half">
-    <h3>Category 2: Touchless interaction</h3>
-    <p><b>Source and direction.</b> Worldpanel by Numerator's 2026 smart-home research emphasizes that ease of use remains important to buyers. I wanted to explore interactions that don't need a touchscreen, especially gestures that can change a projected image (Worldpanel by Numerator, 2026).</p>
-    <p><b>What makes it different?</b> A small movement can become an input without touching anything. Google Nest Hub (2nd generation) uses radar-based Motion Sense for quick gestures; it doesn't need a camera to detect those gestures (Google, n.d.). That's an interesting example of technology recognizing an action people make in the air.</p>
-    <p><b>Research statistic.</b> <b>60% of smart-speaker buyers</b> in Worldpanel's U.S. research named ease of use as one of their main buying criteria. That doesn't mean 60% want gesture controls. It reminded me that an installation can be interesting to look at and still fail if people can't tell what caused the response.</p>
-  </div>
+<div class="w3-half">
+<h3>Category 1: Responsive environments</h3><figure class="visual-figure visual-figure--portrait"><img alt="Visitor interacting with a large magenta and purple projected environment" data-full="images/Research/projection_interaction_reference.png" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/projection_interaction_reference.png" tabindex="0"/><figcaption>Visual reference — immersive projected light as inspiration for a space that notices someone.</figcaption></figure>
+<p><b>Source and direction.</b> NielsenIQ's 2026 <i>The Smart Home Evolution</i> report looks at how connected technology is becoming part of ordinary homes. I'm interested in spaces that notice someone's presence and respond without needing a separate screen or app (NielsenIQ, 2026).</p>
+<p><b>What makes it different?</b> The space becomes part of the interface. For example, the Philips Hue motion sensor can turn connected lights on when it detects movement, with behaviour that can vary by time of day (Philips Hue, n.d.). An artwork could use the same idea of a physical input, but respond with colour, shapes or projection instead.</p>
+<p><b>Research statistic.</b> NielsenIQ reports that <b>27% of Americans</b> used a smart-home product in the previous 30 days. I don't see this as evidence that people want interactive art; it tells me that responding environments are already part of daily life for some people. It made me curious about using that familiar relationship in a less practical, more expressive way.</p>
+</div>
+<div class="w3-half">
+<h3>Category 2: Touchless interaction</h3><figure class="visual-figure visual-figure--portrait"><img alt="Curving red and white light trails across a dark field" data-full="images/Research/motion_particles_reference.png" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/motion_particles_reference.png" tabindex="0"/><figcaption>Visual reference — flowing particle lines suggest how movement could influence a projected image.</figcaption></figure>
+<p><b>Source and direction.</b> Worldpanel by Numerator's 2026 smart-home research emphasizes that ease of use remains important to buyers. I wanted to explore interactions that don't need a touchscreen, especially gestures that can change a projected image (Worldpanel by Numerator, 2026).</p>
+<p><b>What makes it different?</b> A small movement can become an input without touching anything. Google Nest Hub (2nd generation) uses radar-based Motion Sense for quick gestures; it doesn't need a camera to detect those gestures (Google, n.d.). That's an interesting example of technology recognizing an action people make in the air.</p>
+<p><b>Research statistic.</b> <b>60% of smart-speaker buyers</b> in Worldpanel's U.S. research named ease of use as one of their main buying criteria. That doesn't mean 60% want gesture controls. It reminded me that an installation can be interesting to look at and still fail if people can't tell what caused the response.</p>
+</div>
 </div>
 <p>For both directions, I'm taking inspiration from the input-and-response relationship rather than trying to predict exactly what homes will look like in 2028. The first category influenced <i>Still Here</i>; the second opened up ideas involving gestures and visual feedback.</p>
-
 <h2>02 / Research-informed personas</h2>
 <p>I used the Pew, YouGov and smart-home research to imagine two possible visitors. Nia and Alex are fictional working personas, not people I interviewed. Their habits around a projection are questions I want to test, not conclusions I can draw from their age.</p>
 <div class="w3-row-padding">
-  <div class="w3-half">
-    <h3>Nia, 26 / Gen Z visitor</h3>
-    <p><b>Summary.</b> Nia represents a visitor who might want to explore an installation without first reading a long explanation. I would be interested in seeing what she tries naturally when she approaches a projection.</p>
-    <p><b>Generational context.</b> Pew found that <b>33% of U.S. adults aged 18–29</b> said they owned a smart speaker with AI features in February 2026 (Pew Research Center, 2026). That suggests some exposure to connected devices in this age group, but it doesn't tell me how any individual would behave in a gallery.</p>
-    <p><b>Behaviour data.</b> The Pew ownership figure provides context for familiarity with home technology. It is not a finding that Gen Z visitors prefer self-guided art.</p>
-    <p><b>Buying priority data.</b> YouGov reports that <b>49% of U.S. Gen Z respondents</b> consider consumer reviews important when choosing large household appliances (Bali, 2026). This is buying research, not a measure of curiosity about installations.</p>
-    <p><b>Action to test.</b> Would Nia step into the space, notice a change, leave and return to see whether the image reacts again? I'd rather watch what a real participant does than assume that behaviour from the persona.</p>
-  </div>
-  <div class="w3-half">
-    <h3>Alex, 40 / Millennial visitor</h3>
-    <p><b>Summary.</b> Alex represents someone who might expect an interactive system to respond consistently and make its cause and effect clear. I would want to know whether the experience makes sense to a person who gives it only a short amount of time.</p>
-    <p><b>Generational context.</b> In Pew's 2026 comparison, <b>41% of U.S. adults aged 30–49</b> reported having a smart speaker with AI features, the highest percentage among the age brackets shown (Pew Research Center, 2026). Familiarity with devices might shape someone's expectations, but it isn't a guarantee.</p>
-    <p><b>Behaviour data.</b> The 41% ownership figure describes access to smart technology. I can't use it to claim that Alex would understand a new gesture or projection automatically.</p>
-    <p><b>Buying priority data.</b> YouGov found that <b>49% of U.S. Millennials</b> also consider appliance reviews important (Bali, 2026). Worldpanel's broader finding about ease of use adds another reason to think carefully about clear feedback.</p>
-    <p><b>Action to test.</b> Would Alex recognize that a small gesture or a period of standing still caused the image to change? If not, would a quicker initial response help?</p>
-  </div>
+<div class="w3-half">
+<h3>Nia, 26 / Gen Z visitor</h3><figure class="visual-figure visual-figure--wide"><img alt="Abstract illustration of the fictional visitor persona Nia" data-full="images/Research/study_nia.svg" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/study_nia.svg" tabindex="0"/><figcaption>Research note: what to observe when someone enters without instructions. Nia is fictional.</figcaption></figure>
+<p><b>Summary.</b> Nia represents a visitor who might want to explore an installation without first reading a long explanation. I would be interested in seeing what she tries naturally when she approaches a projection.</p>
+<p><b>Generational context.</b> Pew found that <b>33% of U.S. adults aged 18–29</b> said they owned a smart speaker with AI features in February 2026 (Pew Research Center, 2026). That suggests some exposure to connected devices in this age group, but it doesn't tell me how any individual would behave in a gallery.</p>
+<p><b>Behaviour data.</b> The Pew ownership figure provides context for familiarity with home technology. It is not a finding that Gen Z visitors prefer self-guided art.</p>
+<p><b>Buying priority data.</b> YouGov reports that <b>49% of U.S. Gen Z respondents</b> consider consumer reviews important when choosing large household appliances (Bali, 2026). This is buying research, not a measure of curiosity about installations.</p>
+<p><b>Action to test.</b> Would Nia step into the space, notice a change, leave and return to see whether the image reacts again? I'd rather watch what a real participant does than assume that behaviour from the persona.</p>
+</div>
+<div class="w3-half">
+<h3>Alex, 40 / Millennial visitor</h3><figure class="visual-figure visual-figure--wide"><img alt="Abstract illustration of the fictional visitor persona Alex" data-full="images/Research/study_alex.svg" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/study_alex.svg" tabindex="0"/><figcaption>Research note: how quickly someone notices cause and effect. Alex is fictional.</figcaption></figure>
+<p><b>Summary.</b> Alex represents someone who might expect an interactive system to respond consistently and make its cause and effect clear. I would want to know whether the experience makes sense to a person who gives it only a short amount of time.</p>
+<p><b>Generational context.</b> In Pew's 2026 comparison, <b>41% of U.S. adults aged 30–49</b> reported having a smart speaker with AI features, the highest percentage among the age brackets shown (Pew Research Center, 2026). Familiarity with devices might shape someone's expectations, but it isn't a guarantee.</p>
+<p><b>Behaviour data.</b> The 41% ownership figure describes access to smart technology. I can't use it to claim that Alex would understand a new gesture or projection automatically.</p>
+<p><b>Buying priority data.</b> YouGov found that <b>49% of U.S. Millennials</b> also consider appliance reviews important (Bali, 2026). Worldpanel's broader finding about ease of use adds another reason to think carefully about clear feedback.</p>
+<p><b>Action to test.</b> Would Alex recognize that a small gesture or a period of standing still caused the image to change? If not, would a quicker initial response help?</p>
+</div>
 </div>
 <p>These personas helped me separate two questions: can someone discover an interaction, and can they understand it once it responds? The consumer studies don't answer either question for a projection. Actual observation would have to do that.</p>
-
 <h2>03 / HMI: How Might I?</h2>
-<p>The How Might I approach helped me turn uncertainties into questions without deciding on the technology too early. I used the positive, open-ended framing described by Rosala (2021) and discussed in our Week 5 lecture (Sheridan College, 2026).</p>
+<p>The How Might I approach helped me turn uncertainties into questions without deciding on the technology too early. I used the positive, open-ended framing described by Rosala (2021) and discussed in our Week 5 lecture (Sheridan College, 2026).</p><figure class="visual-figure visual-figure--wide"><img alt="Diagram showing stillness and hand movement as two input methods for visual feedback" data-full="images/Research/hmi_field_note.svg" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/hmi_field_note.svg" tabindex="0"/><figcaption>Two early interaction directions. These are open questions, not tested results.</figcaption></figure>
 <div class="w3-row-padding">
-  <div class="w3-half">
-    <h3>Responsive environments</h3>
-    <p><b>Problem space 1.</b> A projected image that changes slowly could look like a normal video. Visitors might not realize their presence matters.</p>
-    <p><b>HMI 1.</b> How might I make standing still produce a noticeable change without making it feel like an ordinary timer?</p>
-    <p><b>Problem space 2.</b> Some sensors respond to movement but aren't suitable for recognizing someone who has stopped moving.</p>
-    <p><b>HMI 2.</b> How might I show that remaining in one place continues to affect the image?</p>
-  </div>
-  <div class="w3-half">
-    <h3>Touchless interaction</h3>
-    <p><b>Problem space 1.</b> A visitor might walk past an invisible gesture interaction without realizing there's anything to try.</p>
-    <p><b>HMI 1.</b> How might I encourage visitors to discover a touchless interaction through the artwork itself?</p>
-    <p><b>Problem space 2.</b> If a gesture doesn't register, there may be no clear feedback and the person might assume they're doing it wrong.</p>
-    <p><b>HMI 2.</b> How might I make a small gesture produce a response that feels understandable and playful?</p>
-  </div>
+<div class="w3-half">
+<h3>Responsive environments</h3>
+<p><b>Problem space 1.</b> A projected image that changes slowly could look like a normal video. Visitors might not realize their presence matters.</p>
+<p><b>HMI 1.</b> How might I make standing still produce a noticeable change without making it feel like an ordinary timer?</p>
+<p><b>Problem space 2.</b> Some sensors respond to movement but aren't suitable for recognizing someone who has stopped moving.</p>
+<p><b>HMI 2.</b> How might I show that remaining in one place continues to affect the image?</p>
+</div>
+<div class="w3-half">
+<h3>Touchless interaction</h3>
+<p><b>Problem space 1.</b> A visitor might walk past an invisible gesture interaction without realizing there's anything to try.</p>
+<p><b>HMI 1.</b> How might I encourage visitors to discover a touchless interaction through the artwork itself?</p>
+<p><b>Problem space 2.</b> If a gesture doesn't register, there may be no clear feedback and the person might assume they're doing it wrong.</p>
+<p><b>HMI 2.</b> How might I make a small gesture produce a response that feels understandable and playful?</p>
+</div>
 </div>
 <p>I kept the questions connected to a real uncertainty, described what I want visitors to experience, and left room for more than one answer. None requires a particular sensor. A webcam, Kinect, distance sensor or another approach could be worth testing, depending on what the interaction needs.</p>
-
 <h2>04 / Choosing my path</h2>
 <div class="w3-row-padding">
-  <div class="w3-half">
-    <h3>Responsive environments</h3>
-    <p><b>Art or Design?</b> I'm choosing <b>Art</b>. I enjoy UX/UI design, but right now I'm more interested in experimenting with how a room can respond to someone's presence than designing a practical interface. I'll still think about the UX side, especially whether the visitor understands that something is responding to them.</p>
-    <p><b>Individual or collaborative?</b> I'd like to start <b>individually</b> so I can focus on making one input and one visual response work before adding more complexity. I can change the visuals as I learn what the sensor actually detects.</p>
-    <p><b>Possible direction: Still Here.</b> Someone stands in a marked area while a projection gradually changes colour. When they leave, the image fades back. I like the idea that simply staying could count as an interaction; this is the direction I want to keep exploring.</p>
-    <p><b>Another direction: Afterimage.</b> Someone approaches a wall and thin projected marks gather around the space. The marks linger briefly after the person leaves. I like the sense that a room can hold a temporary trace without identifying who was there.</p>
-  </div>
-  <div class="w3-half">
-    <h3>Touchless interaction</h3>
-    <p><b>Art or Design?</b> I'd choose <b>Art</b> for this direction too. A touchless museum control could be a Design Path project, but I'm more curious about gestures affecting an entire projected environment than making another kind of button.</p>
-    <p><b>Individual or collaborative?</b> I'd start <b>individually</b> with one or two actions I can test. Tracking several people or making a large installation might call for collaboration later, but I don't want to assume I need that from the start.</p>
-    <p><b>Possible direction: Weather You Can't Hold.</b> Small hand swipes send projected particles sideways or upward, almost like blowing wind through something that isn't physically there. It's more immediately playful than Still Here, but people would need to discover which gestures work.</p>
-    <p><b>Another direction: The Sound of Home.</b> A microphone changes an abstract visual based on everyday room sounds. This isn't gesture control; it's another way of interacting without touching a screen. I liked the thought of the environment producing its own input.</p>
-  </div>
+<div class="w3-half">
+<h3>Responsive environments</h3>
+<p><b>Art or Design?</b> I'm choosing <b>Art</b>. I enjoy UX/UI design, but right now I'm more interested in experimenting with how a room can respond to someone's presence than designing a practical interface. I'll still think about the UX side, especially whether the visitor understands that something is responding to them.</p>
+<p><b>Individual or collaborative?</b> I'd like to start <b>individually</b> so I can focus on making one input and one visual response work before adding more complexity. I can change the visuals as I learn what the sensor actually detects.</p>
+<p><b>Possible direction: Still Here.</b> Someone stands in a marked area while a projection gradually changes colour. When they leave, the image fades back. I like the idea that simply staying could count as an interaction; this is the direction I want to keep exploring.</p>
+<p><b>Another direction: Afterimage.</b> Someone approaches a wall and thin projected marks gather around the space. The marks linger briefly after the person leaves. I like the sense that a room can hold a temporary trace without identifying who was there.</p>
 </div>
-
+<div class="w3-half">
+<h3>Touchless interaction</h3>
+<p><b>Art or Design?</b> I'd choose <b>Art</b> for this direction too. A touchless museum control could be a Design Path project, but I'm more curious about gestures affecting an entire projected environment than making another kind of button.</p>
+<p><b>Individual or collaborative?</b> I'd start <b>individually</b> with one or two actions I can test. Tracking several people or making a large installation might call for collaboration later, but I don't want to assume I need that from the start.</p>
+<p><b>Possible direction: Weather You Can't Hold.</b> Small hand swipes send projected particles sideways or upward, almost like blowing wind through something that isn't physically there. It's more immediately playful than Still Here, but people would need to discover which gestures work.</p>
+<p><b>Another direction: The Sound of Home.</b> A microphone changes an abstract visual based on everyday room sounds. This isn't gesture control; it's another way of interacting without touching a screen. I liked the thought of the environment producing its own input.</p>
+</div>
+</div><div><p class="visual-lead"><b>Early concept directions:</b> Quick concept drawings. None of these ideas has been built or tested yet.</p></div><div aria-label="Four early visual concept sketches" class="concept-gallery"><figure class="visual-figure"><img alt="Illustrated three-stage yellow to orange to red presence-responsive projection" data-full="images/Research/sketch_still_here.svg" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/sketch_still_here.svg" tabindex="0"/><figcaption><b>Still Here</b> — staying in one place changes the projected colour.</figcaption></figure><figure class="visual-figure"><img alt="Concept sketch of an abstract figure leaving light trails" data-full="images/Research/sketch_afterimage.svg" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/sketch_afterimage.svg" tabindex="0"/><figcaption><b>Afterimage</b> — a temporary visual trace remains after someone leaves.</figcaption></figure><figure class="visual-figure"><img alt="Concept sketch of a hand gesture moving projected particles" data-full="images/Research/sketch_weather.svg" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/sketch_weather.svg" tabindex="0"/><figcaption><b>Weather You Can’t Hold</b> — a gesture could push projected particles.</figcaption></figure><figure class="visual-figure"><img alt="Concept diagram of sound levels changing a projected waveform" data-full="images/Research/sketch_sound.svg" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/sketch_sound.svg" tabindex="0"/><figcaption><b>The Sound of Home</b> — everyday sound could influence a visual waveform.</figcaption></figure></div>
 <h2>05 / Where the research led me</h2>
-<p>After comparing the directions, I kept returning to <i>Still Here</i>. It asks less of the visitor than the gesture ideas. There's no specific movement to learn, which makes me curious about whether the change in the projection can feel like an acknowledgement of someone simply being there. Isabelle Pleno's <i>Taking Up Space</i> and the immersive work discussed by Gensler gave me more ways to think about bodies and the surrounding space (Pleno, 2024; Gensler Research Institute &amp; Immersive Experience Institute, 2025).</p>
+<p>After comparing the directions, I kept returning to <i>Still Here</i>. It asks less of the visitor than the gesture ideas. There's no specific movement to learn, which makes me curious about whether the change in the projection can feel like an acknowledgement of someone simply being there. Isabelle Pleno's <i>Taking Up Space</i> and the immersive work discussed by Gensler gave me more ways to think about bodies and the surrounding space (Pleno, 2024; Gensler Research Institute &amp; Immersive Experience Institute, 2025).</p><figure class="visual-figure visual-figure--wide"><img alt="Abstract white cyan and red luminous trails forming a wide particle-wave image" data-full="images/Research/flowing_light_reference.png" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Research/flowing_light_reference.png" tabindex="0"/><figcaption>Visual mood reference — abstract light trails suggest a direction for projection aesthetics, not a completed experiment.</figcaption></figure>
 <p>I haven't chosen a sensor yet. A webcam with person detection, a Kinect or another suitable sensor could be more useful than a simple motion trigger because I need the system to keep recognizing someone who stands still. I also looked at interactive motion tracking and TouchDesigner particle examples to understand what's possible visually, without treating them as completed experiments of my own (Go2 Productions, 2025; sabz, 2019; Derivative, n.d.). I want to test whether yellow-to-red feels interesting or too much like a warning. The first test would be small: one presence signal, a quick sign that the person has been noticed, and a slower colour change they can watch unfold.</p>
-
-<h2>Research sources</h2>
+<p class="visual-note"><b>Image note:</b> The reference images and drawings above show ideas I am exploring. They are not photographs or proof of a finished <i>Still Here</i> installation.</p><h2>Research sources</h2>
 <p>These are the reports, product examples and art references I used while developing the research and concepts.</p>
-<p>NielsenIQ. (2026, September 15). <i>The smart home evolution: AI, outdoor innovation, and the next wave of home improvement.</i> <a href="https://nielseniq.com/global/en/insights/report/2026/the-smart-home-evolution/" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Worldpanel by Numerator. (2026, October 19). <i>What do consumers really want from the smart home?</i> <a href="https://worldpanelbynumerator.com/insights/us-smart-home-consumer-insight" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Pew Research Center. (2026, June 17). <i>People in their 30s and 40s are most likely to have smart speakers, doorbells and thermostats at home.</i> <a href="https://www.pewresearch.org/chart/people-in-their-30s-and-40s-are-most-likely-to-have-smart-speakers-doorbells-and-thermostats-at-home/" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Bali, S. (2026, June 24). <i>Decoding large household appliance purchases: How motivations shift across generations.</i> YouGov. <a href="https://yougov.com/en-us/articles/55041-decoding-white-goods-purchases-how-motivations-shift-across-generations-in-the-us" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Philips Hue. (n.d.). <i>Motion sensor.</i> <a href="https://www.philips-hue.com/en-ca/p/hue-motion-sensor/046677570972" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Google. (n.d.). <i>Motion Sense on Nest Hub.</i> Google Home and Nest Help. <a href="https://support.google.com/googlehome/answer/10388741" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Rosala, M. (2021, January 17). <i>Using “How Might We” questions to ideate on the right problems.</i> Nielsen Norman Group. <a href="https://www.nngroup.com/articles/how-might-we-questions/" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Gensler Research Institute &amp; Immersive Experience Institute. (2025). <i>Evolving immersive: The 2025 immersive entertainment &amp; culture industry report.</i> <a href="https://www.gensler.com/gri/immersive-industry-report-2025" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Pleno, I. (2024). <i>Taking up space.</i> <a href="https://www.isabellepleno.com/art/taking-up-space" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Go2 Productions. (2025, March 10). <i>How motion tracking enhances interactive installations.</i> <a href="https://go2productions.com/blog/how-motion-tracking-enhances-interactive-installations/" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>sabz. (2019, November 13). <i>Particle flow workflow</i> [Online forum post]. TouchDesigner Forum. <a href="https://forum.derivative.ca/t/particle-flow-workflow/112734" target="_blank" rel="noopener noreferrer">Source</a>.</p>
-<p>Derivative. (n.d.). <i>Getting started with TouchDesigner</i> [Workshop listing]. <a href="https://derivative.ca/workshop/getting-started-touchdesigner/62938" target="_blank" rel="noopener noreferrer">Source</a>.</p>
+<p>NielsenIQ. (2026, September 15). <i>The smart home evolution: AI, outdoor innovation, and the next wave of home improvement.</i> <a href="https://nielseniq.com/global/en/insights/report/2026/the-smart-home-evolution/" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Worldpanel by Numerator. (2026, October 19). <i>What do consumers really want from the smart home?</i> <a href="https://worldpanelbynumerator.com/insights/us-smart-home-consumer-insight" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Pew Research Center. (2026, June 17). <i>People in their 30s and 40s are most likely to have smart speakers, doorbells and thermostats at home.</i> <a href="https://www.pewresearch.org/chart/people-in-their-30s-and-40s-are-most-likely-to-have-smart-speakers-doorbells-and-thermostats-at-home/" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Bali, S. (2026, June 24). <i>Decoding large household appliance purchases: How motivations shift across generations.</i> YouGov. <a href="https://yougov.com/en-us/articles/55041-decoding-white-goods-purchases-how-motivations-shift-across-generations-in-the-us" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Philips Hue. (n.d.). <i>Motion sensor.</i> <a href="https://www.philips-hue.com/en-ca/p/hue-motion-sensor/046677570972" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Google. (n.d.). <i>Motion Sense on Nest Hub.</i> Google Home and Nest Help. <a href="https://support.google.com/googlehome/answer/10388741" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Rosala, M. (2021, January 17). <i>Using “How Might We” questions to ideate on the right problems.</i> Nielsen Norman Group. <a href="https://www.nngroup.com/articles/how-might-we-questions/" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Gensler Research Institute &amp; Immersive Experience Institute. (2025). <i>Evolving immersive: The 2025 immersive entertainment &amp; culture industry report.</i> <a href="https://www.gensler.com/gri/immersive-industry-report-2025" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Pleno, I. (2024). <i>Taking up space.</i> <a href="https://www.isabellepleno.com/art/taking-up-space" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Go2 Productions. (2025, March 10). <i>How motion tracking enhances interactive installations.</i> <a href="https://go2productions.com/blog/how-motion-tracking-enhances-interactive-installations/" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>sabz. (2019, November 13). <i>Particle flow workflow</i> [Online forum post]. TouchDesigner Forum. <a href="https://forum.derivative.ca/t/particle-flow-workflow/112734" rel="noopener noreferrer" target="_blank">Source</a>.</p>
+<p>Derivative. (n.d.). <i>Getting started with TouchDesigner</i> [Workshop listing]. <a href="https://derivative.ca/workshop/getting-started-touchdesigner/62938" rel="noopener noreferrer" target="_blank">Source</a>.</p>
 <p>Sheridan College. (2026). <i>Physical Computing Week 5</i> [Lecture slides]. DESN 30146, Interaction Design: Physical Computing.</p>
 </div>
 <hr class="w3-round" style="width:90%;border:5px solid grey;margin-top:80px"/>
@@ -242,8 +264,8 @@ img {
 <h1 class="w3-xxxlarge w3-text-red"><b>Project 1 Concept</b></h1>
 <hr class="w3-round" style="width:50px;border:5px solid red"/>
 <h2>Still Here</h2>
-<p>Still Here is a proposed interactive projection that changes as someone spends time in one spot. A visitor enters a marked area and the projected colour begins in yellow, gradually shifting toward orange and red while they remain. When the person leaves, the image fades back. I am curious about whether stillness can count as an interaction, and whether a room can acknowledge someone without identifying or recording them.</p>
-<h3>Proposed interaction</h3><p>Input: someone enters or leaves an active area. Sensor: a webcam, Kinect, or another reliable presence sensor detects whether someone remains there. Visual response: TouchDesigner gradually changes the projection over time. The sensor choice is still open; these are plans, not a finished installation.</p><h3>Testing plan</h3><p>I would first test whether the chosen sensor can keep detecting a person standing still. Then I would compare a quick visual acknowledgement with a slower colour transition. I also want someone to try it without instructions, to see whether they understand that their presence is changing the image. The yellow-to-red colours may need revisiting if red feels like a warning.</p><h3>Reflection</h3><p>We followed examples provided during the Arduino, ProtoPie Connect and TouchDesigner activities. I enjoyed seeing how a physical input could affect something visual, even though the TouchDesigner exercise took extra work when it would not run on the lab computer. I started without a project chosen and gradually became more interested in interactive projections. Still Here feels worth testing, even though I have not settled the sensor or the exact visual response.</p></div>
+<p>Still Here is a proposed interactive projection that changes as someone spends time in one spot. A visitor enters a marked area and the projected colour begins in yellow, gradually shifting toward orange and red while they remain. When the person leaves, the image fades back. I am curious about whether stillness can count as an interaction, and whether a room can acknowledge someone without identifying or recording them.</p><figure class="visual-figure visual-figure--wide"><img alt="Three simple figures before projected yellow, orange and red glows illustrating the proposed transition" data-full="images/Concept/still_here_colour_storyboard.png" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Concept/still_here_colour_storyboard.png" tabindex="0"/><figcaption>Still Here — storyboard of a possible progression from yellow to orange to red as someone remains in place.</figcaption></figure>
+<h3>Proposed interaction</h3><p>Input: someone enters or leaves an active area. Sensor: a webcam, Kinect, or another reliable presence sensor detects whether someone remains there. Visual response: TouchDesigner gradually changes the projection over time. The sensor choice is still open; these are plans, not a finished installation.</p><figure class="visual-figure visual-figure--wide"><img alt="Flow diagram: enter, remain while colour changes, leave and fade back to beginning" data-full="images/Concept/interaction_draft.svg" decoding="async" loading="lazy" onclick="onClick(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();onClick(this)}" role="button" src="images/Concept/interaction_draft.svg" tabindex="0"/><figcaption>First-pass interaction sequence. I still need to choose and test the sensor and timing.</figcaption></figure><h3>Testing plan</h3><p>I would first test whether the chosen sensor can keep detecting a person standing still. Then I would compare a quick visual acknowledgement with a slower colour transition. I also want someone to try it without instructions, to see whether they understand that their presence is changing the image. The yellow-to-red colours may need revisiting if red feels like a warning.</p><h3>Reflection</h3><p>We followed examples provided during the Arduino, ProtoPie Connect and TouchDesigner activities. I enjoyed seeing how a physical input could affect something visual, even though the TouchDesigner exercise took extra work when it would not run on the lab computer. I started without a project chosen and gradually became more interested in interactive projections. Still Here feels worth testing, even though I have not settled the sensor or the exact visual response.</p></div>
 <!-- Modal for full size images on click-->
 <div class="w3-modal w3-grey" id="modal01" onclick="if(event.target===this)closeMediaModal()" style="padding-top:0">
 <span class="w3-button w3-black w3-xxlarge w3-display-topright" onclick="closeMediaModal()">×</span>
